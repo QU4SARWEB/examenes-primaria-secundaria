@@ -1,12 +1,14 @@
 :root {
-  --bg: #0f172a;
-  --bg-light: #1e293b;
-  --card: #1e293b;
-  --card-border: #334155;
-  --text: #f8fafc;
-  --text-secondary: #94a3b8;
+  --bg: #0a0e1a;
+  --bg-light: #111827;
+  --card: #1a1f35;
+  --card-border: #2a3050;
+  --text: #f1f5f9;
+  --text-secondary: #8892b0;
   --primary: #818cf8;
+  --primary-glow: rgba(129, 140, 248, 0.2);
   --radius: 16px;
+  --radius-sm: 12px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,159 +18,322 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  background-image: 
+    radial-gradient(ellipse at 20% 0%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
 }
 
+/* HEADER */
 header {
-  background: var(--bg-light);
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--card-border);
-  padding: 14px 5%;
+  padding: 16px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .top { max-width: 900px; margin: auto; }
 
-.brand-area { display: flex; align-items: center; gap: 12px; }
+.brand-area { display: flex; align-items: center; gap: 14px; }
 
 .brand-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, #818cf8, #a78bfa);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.brand-icon i { width: 22px; height: 22px; color: white; }
-
-.brand { font-size: 18px; font-weight: 800; }
-.sub { font-size: 12px; color: var(--text-secondary); }
-
-.wrap {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 32px;
-}
-.hero h1 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
-.hero p { color: var(--text-secondary); font-size: 15px; }
-
-.courses {
-  display: grid;
-  gap: 12px;
-}
-
-.course-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: var(--text);
-  transition: all .2s;
-  cursor: pointer;
-}
-.course-card:hover {
-  border-color: var(--primary);
-  transform: translateX(4px);
-  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.15);
-}
-
-.course-icon {
-  width: 52px;
-  height: 52px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  box-shadow: 0 4px 20px var(--primary-glow);
 }
-.course-icon i { width: 26px; height: 26px; color: white; }
+.brand-icon i { width: 24px; height: 24px; color: white; }
 
-.course-info {
-  flex: 1;
+.brand { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+.sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+/* MAIN */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
 }
-.course-info h2 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 2px;
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
 }
-.course-info p {
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--primary-glow);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  border-radius: 20px;
   font-size: 12px;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
-}
-
-.course-badge {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 8px;
-  background: rgba(129, 140, 248, 0.15);
+  font-weight: 600;
   color: var(--primary);
-  border-radius: 6px;
+  margin-bottom: 16px;
 }
-.badge-special {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
+.hero-badge i { width: 14px; height: 14px; }
+.hero h1 { 
+  font-size: 36px; 
+  font-weight: 900; 
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-
-.course-arrow {
-  width: 20px;
-  height: 20px;
-  color: var(--text-secondary);
-}
-
-.simulacro {
-  border: 2px solid #ef4444;
-  background: rgba(239, 68, 68, 0.05);
-}
-.simulacro:hover {
-  border-color: #ef4444;
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2);
+.hero p { 
+  color: var(--text-secondary); 
+  font-size: 16px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.grade-section {
-  margin-bottom: 32px;
+/* GRADE BLOCKS */
+.grade-block {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all .3s;
 }
-.grade-title {
+
+.grade-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: 16px;
+  padding: 24px 28px;
+}
+
+.grade-num {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+}
+
+.active-grade .grade-num {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  box-shadow: 0 4px 20px var(--primary-glow);
+}
+
+.grade-meta { flex: 1; }
+.grade-meta h2 { 
+  font-size: 20px; 
+  font-weight: 800; 
+  margin-bottom: 4px;
+}
+.grade-meta p { 
+  font-size: 13px; 
+  color: var(--text-secondary); 
+}
+
+.grade-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--card-border);
+  white-space: nowrap;
 }
-.grade-title i { width: 18px; height: 18px; color: var(--primary); }
+.grade-status i { width: 14px; height: 14px; }
 
-.coming-soon {
-  opacity: 0.5;
-  cursor: not-allowed !important;
-  pointer-events: none;
-}
-.coming-soon:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  border-color: var(--card-border) !important;
+.status-active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
-.badge-soon {
-  background: rgba(251, 191, 36, 0.15);
+.status-soon {
+  background: rgba(251, 191, 36, 0.1);
   color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.2);
 }
 
+/* SUBJECTS GRID */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 24px 24px;
+}
+
+.subject-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.subject-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.subject-card:hover::before { opacity: 1; }
+
+.subject-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, white));
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.subject-icon i { width: 24px; height: 24px; color: white; }
+
+.subject-name {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.subject-count {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+/* SIMULACRO BANNER */
+.simulacro-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 24px 24px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  transition: all .25s;
+}
+.simulacro-banner:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.08));
+  border-color: #ef4444;
+  transform: translateX(4px);
+}
+.simulacro-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.simulacro-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
+}
+.simulacro-icon i { width: 24px; height: 24px; color: white; }
+.simulacro-banner h3 { 
+  font-size: 15px; 
+  font-weight: 700; 
+  margin-bottom: 3px;
+  color: #f87171;
+}
+.simulacro-banner p { 
+  font-size: 12px; 
+  color: var(--text-secondary); 
+}
+.simulacro-banner > i { 
+  width: 20px; 
+  height: 20px; 
+  color: var(--text-secondary);
+}
+
+/* COMING SOON GRADES */
+.coming-soon-grade {
+  opacity: 0.6;
+  position: relative;
+}
+
+.coming-soon-grade .grade-num {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+.coming-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+.coming-overlay i { width: 16px; height: 16px; }
+
+/* RESPONSIVE */
 @media (max-width: 600px) {
-  .course-card { padding: 14px 16px; }
-  .course-icon { width: 44px; height: 44px; }
-  .course-icon i { width: 22px; height: 22px; }
+  .wrap { padding: 24px 16px 40px; }
+  .hero h1 { font-size: 28px; }
+  
+  .grade-header { padding: 20px; }
+  .grade-num { width: 52px; height: 52px; font-size: 18px; }
+  .grade-meta h2 { font-size: 17px; }
+  .grade-status { padding: 6px 10px; font-size: 11px; }
+  
+  .subjects-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 0 16px 20px;
+  }
+  .subject-card { padding: 16px 8px; }
+  .subject-icon { width: 40px; height: 40px; }
+  .subject-icon i { width: 20px; height: 20px; }
+  .subject-name { font-size: 11px; }
+  
+  .simulacro-banner { margin: 0 16px 20px; padding: 16px; }
+}
+
+@media (max-width: 400px) {
+  .subjects-grid { grid-template-columns: repeat(2, 1fr); }
 }

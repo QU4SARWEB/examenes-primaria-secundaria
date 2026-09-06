@@ -25,200 +25,181 @@
   </header>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
-      <h1>Elige tu grado</h1>
-      <p>Practica para tus examenes con banco de preguntas aleatorias</p>
+      <div class="hero-badge"><i data-lucide="sparkles"></i> Plataforma de Estudio</div>
+      <h1>Prepara tus examenes</h1>
+      <p>Banco de preguntas aleatorias con retroalimentacion inmediata</p>
     </section>
 
-    <!-- 6TO GRADO -->
-    <section class="grade-section">
-      <h3 class="grade-title"><i data-lucide="book-open"></i> 6to Grado Primaria</h3>
-      <div class="courses">
-        <a href="matematica/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
-            <i data-lucide="calculator"></i>
-          </div>
-          <div class="course-info">
-            <h2>Matematica</h2>
-            <p>Fracciones, decimales, porcentajes, geometria</p>
-            <span class="course-badge">8 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+    <!-- 6TO GRADO - ACTIVO -->
+    <section class="grade-block active-grade">
+      <div class="grade-header">
+        <div class="grade-num">6to</div>
+        <div class="grade-meta">
+          <h2>Grado Primaria</h2>
+          <p>9 materias disponibles + Simulacro MINEDU</p>
+        </div>
+        <div class="grade-status status-active">
+          <i data-lucide="check-circle"></i> Disponible
+        </div>
+      </div>
+
+      <div class="subjects-grid">
+        <a href="matematica/index.html" class="subject-card" style="--accent: #6366f1">
+          <div class="subject-icon"><i data-lucide="calculator"></i></div>
+          <span class="subject-name">Matematica</span>
+          <span class="subject-count">8 temas</span>
         </a>
 
-        <a href="comunicacion/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>Comunicacion</h2>
-            <p>Comprension lectora, gramatica, ortografia</p>
-            <span class="course-badge">7 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="comunicacion/index.html" class="subject-card" style="--accent: #f59e0b">
+          <div class="subject-icon"><i data-lucide="book-open"></i></div>
+          <span class="subject-name">Comunicacion</span>
+          <span class="subject-count">7 temas</span>
         </a>
 
-        <a href="personal-social/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
-            <i data-lucide="landmark"></i>
-          </div>
-          <div class="course-info">
-            <h2>Personal Social</h2>
-            <p>Historia, geografia, economia, civica</p>
-            <span class="course-badge">6 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="personal-social/index.html" class="subject-card" style="--accent: #10b981">
+          <div class="subject-icon"><i data-lucide="landmark"></i></div>
+          <span class="subject-name">Personal Social</span>
+          <span class="subject-count">6 temas</span>
         </a>
 
-        <a href="ciencia-tecnologia/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
-            <i data-lucide="microscope"></i>
-          </div>
-          <div class="course-info">
-            <h2>Ciencia y Tecnologia</h2>
-            <p>Seres vivos, cuerpo humano, energia</p>
-            <span class="course-badge">6 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="ciencia-tecnologia/index.html" class="subject-card" style="--accent: #8b5cf6">
+          <div class="subject-icon"><i data-lucide="microscope"></i></div>
+          <span class="subject-name">Ciencia y Tech.</span>
+          <span class="subject-count">6 temas</span>
         </a>
 
-        <a href="ingles/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
-            <i data-lucide="languages"></i>
-          </div>
-          <div class="course-info">
-            <h2>Ingles</h2>
-            <p>Verbos, vocabulario, gramatica</p>
-            <span class="course-badge">5 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="ingles/index.html" class="subject-card" style="--accent: #ec4899">
+          <div class="subject-icon"><i data-lucide="languages"></i></div>
+          <span class="subject-name">Ingles</span>
+          <span class="subject-count">5 temas</span>
         </a>
 
-        <a href="educacion-trabajo/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
-            <i data-lucide="briefcase"></i>
-          </div>
-          <div class="course-info">
-            <h2>Educacion para el Trabajo</h2>
-            <p>Oficios, trabajo en equipo, emprendimiento</p>
-            <span class="course-badge">5 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="educacion-trabajo/index.html" class="subject-card" style="--accent: #06b6d4">
+          <div class="subject-icon"><i data-lucide="briefcase"></i></div>
+          <span class="subject-name">Ed. Trabajo</span>
+          <span class="subject-count">5 temas</span>
         </a>
 
-        <a href="educacion-religiosa/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-            <i data-lucide="heart"></i>
-          </div>
-          <div class="course-info">
-            <h2>Educacion Religiosa</h2>
-            <p>Valores, etica, espiritualidad</p>
-            <span class="course-badge">6 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="educacion-religiosa/index.html" class="subject-card" style="--accent: #a855f7">
+          <div class="subject-icon"><i data-lucide="heart"></i></div>
+          <span class="subject-name">Ed. Religiosa</span>
+          <span class="subject-count">6 temas</span>
         </a>
 
-        <a href="arte/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #f43f5e, #fb7185);">
-            <i data-lucide="palette"></i>
-          </div>
-          <div class="course-info">
-            <h2>Arte</h2>
-            <p>Expresion visual, musica, teatro</p>
-            <span class="course-badge">5 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="arte/index.html" class="subject-card" style="--accent: #f43f5e">
+          <div class="subject-icon"><i data-lucide="palette"></i></div>
+          <span class="subject-name">Arte</span>
+          <span class="subject-count">5 temas</span>
         </a>
 
-        <a href="educacion-fisica/index.html" class="course-card">
-          <div class="course-icon" style="background: linear-gradient(135deg, #14b8a6, #2dd4bf);">
-            <i data-lucide="activity"></i>
-          </div>
-          <div class="course-info">
-            <h2>Educacion Fisica</h2>
-            <p>Deportes, salud, juegos cooperativos</p>
-            <span class="course-badge">5 temas</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
+        <a href="educacion-fisica/index.html" class="subject-card" style="--accent: #14b8a6">
+          <div class="subject-icon"><i data-lucide="activity"></i></div>
+          <span class="subject-name">Ed. Fisica</span>
+          <span class="subject-count">5 temas</span>
         </a>
+      </div>
 
-        <a href="simulacro-minedu/index.html" class="course-card simulacro">
-          <div class="course-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
-            <i data-lucide="award"></i>
+      <a href="simulacro-minedu/index.html" class="simulacro-banner">
+        <div class="simulacro-left">
+          <div class="simulacro-icon"><i data-lucide="award"></i></div>
+          <div>
+            <h3>Simulacro MINEDU</h3>
+            <p>Examen oficial - 100 preguntas de todas las materias</p>
           </div>
-          <div class="course-info">
-            <h2>Simulacro MINEDU</h2>
-            <p>100 preguntas de todos los cursos</p>
-            <span class="course-badge badge-special">Oficial</span>
-          </div>
-          <i data-lucide="chevron-right" class="course-arrow"></i>
-        </a>
+        </div>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </section>
+
+    <!-- 1RO SECUNDARIA -->
+    <section class="grade-block coming-soon-grade">
+      <div class="grade-header">
+        <div class="grade-num">1ro</div>
+        <div class="grade-meta">
+          <h2>Secundaria</h2>
+          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+        </div>
+        <div class="grade-status status-soon">
+          <i data-lucide="clock"></i> Proximamente
+        </div>
+      </div>
+      <div class="coming-overlay">
+        <i data-lucide="construction"></i>
+        <span>En construccion</span>
       </div>
     </section>
 
-    <!-- SECUNDARIA -->
-    <section class="grade-section">
-      <h3 class="grade-title"><i data-lucide="school"></i> Secundaria</h3>
-      <div class="courses">
-        <div class="course-card coming-soon">
-          <div class="course-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>1ro de Secundaria</h2>
-            <p>Matematica, Comunicacion, Ciencia y mas</p>
-            <span class="course-badge badge-soon">Coming Soon</span>
-          </div>
-          <i data-lucide="lock" class="course-arrow"></i>
+    <!-- 2DO SECUNDARIA -->
+    <section class="grade-block coming-soon-grade">
+      <div class="grade-header">
+        <div class="grade-num">2do</div>
+        <div class="grade-meta">
+          <h2>Secundaria</h2>
+          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
         </div>
+        <div class="grade-status status-soon">
+          <i data-lucide="clock"></i> Proximamente
+        </div>
+      </div>
+      <div class="coming-overlay">
+        <i data-lucide="construction"></i>
+        <span>En construccion</span>
+      </div>
+    </section>
 
-        <div class="course-card coming-soon">
-          <div class="course-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>2do de Secundaria</h2>
-            <p>Matematica, Comunicacion, Ciencia y mas</p>
-            <span class="course-badge badge-soon">Coming Soon</span>
-          </div>
-          <i data-lucide="lock" class="course-arrow"></i>
+    <!-- 3RO SECUNDARIA -->
+    <section class="grade-block coming-soon-grade">
+      <div class="grade-header">
+        <div class="grade-num">3ro</div>
+        <div class="grade-meta">
+          <h2>Secundaria</h2>
+          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
         </div>
+        <div class="grade-status status-soon">
+          <i data-lucide="clock"></i> Proximamente
+        </div>
+      </div>
+      <div class="coming-overlay">
+        <i data-lucide="construction"></i>
+        <span>En construccion</span>
+      </div>
+    </section>
 
-        <div class="course-card coming-soon">
-          <div class="course-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>3ro de Secundaria</h2>
-            <p>Matematica, Comunicacion, Ciencia y mas</p>
-            <span class="course-badge badge-soon">Coming Soon</span>
-          </div>
-          <i data-lucide="lock" class="course-arrow"></i>
+    <!-- 4TO SECUNDARIA -->
+    <section class="grade-block coming-soon-grade">
+      <div class="grade-header">
+        <div class="grade-num">4to</div>
+        <div class="grade-meta">
+          <h2>Secundaria</h2>
+          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
         </div>
+        <div class="grade-status status-soon">
+          <i data-lucide="clock"></i> Proximamente
+        </div>
+      </div>
+      <div class="coming-overlay">
+        <i data-lucide="construction"></i>
+        <span>En construccion</span>
+      </div>
+    </section>
 
-        <div class="course-card coming-soon">
-          <div class="course-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>4to de Secundaria</h2>
-            <p>Matematica, Comunicacion, Ciencia y mas</p>
-            <span class="course-badge badge-soon">Coming Soon</span>
-          </div>
-          <i data-lucide="lock" class="course-arrow"></i>
+    <!-- 5TO SECUNDARIA -->
+    <section class="grade-block coming-soon-grade">
+      <div class="grade-header">
+        <div class="grade-num">5to</div>
+        <div class="grade-meta">
+          <h2>Secundaria</h2>
+          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
         </div>
-
-        <div class="course-card coming-soon">
-          <div class="course-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
-            <i data-lucide="book-open"></i>
-          </div>
-          <div class="course-info">
-            <h2>5to de Secundaria</h2>
-            <p>Matematica, Comunicacion, Ciencia y mas</p>
-            <span class="course-badge badge-soon">Coming Soon</span>
-          </div>
-          <i data-lucide="lock" class="course-arrow"></i>
+        <div class="grade-status status-soon">
+          <i data-lucide="clock"></i> Proximamente
         </div>
+      </div>
+      <div class="coming-overlay">
+        <i data-lucide="construction"></i>
+        <span>En construccion</span>
       </div>
     </section>
   </main>
