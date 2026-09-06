@@ -32,178 +32,215 @@
       <p>Banco de preguntas aleatorias con retroalimentacion inmediata</p>
     </section>
 
-    <!-- 6TO GRADO - ACTIVO -->
-    <section class="grade-block active-grade">
-      <div class="grade-header">
-        <div class="grade-num">6to</div>
-        <div class="grade-meta">
-          <h2>Grado Primaria</h2>
-          <p>9 materias disponibles + Simulacro MINEDU</p>
-        </div>
-        <div class="grade-status status-active">
-          <i data-lucide="check-circle"></i> Disponible
-        </div>
-      </div>
-
-      <div class="subjects-grid">
-        <a href="matematica/index.html" class="subject-card" style="--accent: #6366f1">
-          <div class="subject-icon"><i data-lucide="calculator"></i></div>
-          <span class="subject-name">Matematica</span>
-          <span class="subject-count">8 temas</span>
-        </a>
-
-        <a href="comunicacion/index.html" class="subject-card" style="--accent: #f59e0b">
-          <div class="subject-icon"><i data-lucide="book-open"></i></div>
-          <span class="subject-name">Comunicacion</span>
-          <span class="subject-count">7 temas</span>
-        </a>
-
-        <a href="personal-social/index.html" class="subject-card" style="--accent: #10b981">
-          <div class="subject-icon"><i data-lucide="landmark"></i></div>
-          <span class="subject-name">Personal Social</span>
-          <span class="subject-count">6 temas</span>
-        </a>
-
-        <a href="ciencia-tecnologia/index.html" class="subject-card" style="--accent: #8b5cf6">
-          <div class="subject-icon"><i data-lucide="microscope"></i></div>
-          <span class="subject-name">Ciencia y Tech.</span>
-          <span class="subject-count">6 temas</span>
-        </a>
-
-        <a href="ingles/index.html" class="subject-card" style="--accent: #ec4899">
-          <div class="subject-icon"><i data-lucide="languages"></i></div>
-          <span class="subject-name">Ingles</span>
-          <span class="subject-count">5 temas</span>
-        </a>
-
-        <a href="educacion-trabajo/index.html" class="subject-card" style="--accent: #06b6d4">
-          <div class="subject-icon"><i data-lucide="briefcase"></i></div>
-          <span class="subject-name">Ed. Trabajo</span>
-          <span class="subject-count">5 temas</span>
-        </a>
-
-        <a href="educacion-religiosa/index.html" class="subject-card" style="--accent: #a855f7">
-          <div class="subject-icon"><i data-lucide="heart"></i></div>
-          <span class="subject-name">Ed. Religiosa</span>
-          <span class="subject-count">6 temas</span>
-        </a>
-
-        <a href="arte/index.html" class="subject-card" style="--accent: #f43f5e">
-          <div class="subject-icon"><i data-lucide="palette"></i></div>
-          <span class="subject-name">Arte</span>
-          <span class="subject-count">5 temas</span>
-        </a>
-
-        <a href="educacion-fisica/index.html" class="subject-card" style="--accent: #14b8a6">
-          <div class="subject-icon"><i data-lucide="activity"></i></div>
-          <span class="subject-name">Ed. Fisica</span>
-          <span class="subject-count">5 temas</span>
-        </a>
-      </div>
-
-      <a href="simulacro-minedu/index.html" class="simulacro-banner">
-        <div class="simulacro-left">
-          <div class="simulacro-icon"><i data-lucide="award"></i></div>
-          <div>
-            <h3>Simulacro MINEDU</h3>
-            <p>Examen oficial - 100 preguntas de todas las materias</p>
+    <!-- 6TO GRADO - COLLAPSIBLE -->
+    <div class="accordion">
+      <button class="accordion-btn active" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num active-num">6to</div>
+          <div class="acc-info">
+            <h2>Grado Primaria</h2>
+            <p>9 materias + Simulacro MINEDU</p>
           </div>
         </div>
-        <i data-lucide="arrow-right"></i>
-      </a>
-    </section>
+        <div class="acc-right">
+          <span class="acc-status status-active"><i data-lucide="check-circle"></i> Disponible</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content open">
+        <div class="subjects-grid">
+          <a href="matematica/index.html" class="subject-card" style="--accent: #6366f1">
+            <div class="subject-icon"><i data-lucide="calculator"></i></div>
+            <span class="subject-name">Matematica</span>
+            <span class="subject-count">8 temas</span>
+          </a>
+          <a href="comunicacion/index.html" class="subject-card" style="--accent: #f59e0b">
+            <div class="subject-icon"><i data-lucide="book-open"></i></div>
+            <span class="subject-name">Comunicacion</span>
+            <span class="subject-count">7 temas</span>
+          </a>
+          <a href="personal-social/index.html" class="subject-card" style="--accent: #10b981">
+            <div class="subject-icon"><i data-lucide="landmark"></i></div>
+            <span class="subject-name">Personal Social</span>
+            <span class="subject-count">6 temas</span>
+          </a>
+          <a href="ciencia-tecnologia/index.html" class="subject-card" style="--accent: #8b5cf6">
+            <div class="subject-icon"><i data-lucide="microscope"></i></div>
+            <span class="subject-name">Ciencia y Tech.</span>
+            <span class="subject-count">6 temas</span>
+          </a>
+          <a href="ingles/index.html" class="subject-card" style="--accent: #ec4899">
+            <div class="subject-icon"><i data-lucide="languages"></i></div>
+            <span class="subject-name">Ingles</span>
+            <span class="subject-count">5 temas</span>
+          </a>
+          <a href="educacion-trabajo/index.html" class="subject-card" style="--accent: #06b6d4">
+            <div class="subject-icon"><i data-lucide="briefcase"></i></div>
+            <span class="subject-name">Ed. Trabajo</span>
+            <span class="subject-count">5 temas</span>
+          </a>
+          <a href="educacion-religiosa/index.html" class="subject-card" style="--accent: #a855f7">
+            <div class="subject-icon"><i data-lucide="heart"></i></div>
+            <span class="subject-name">Ed. Religiosa</span>
+            <span class="subject-count">6 temas</span>
+          </a>
+          <a href="arte/index.html" class="subject-card" style="--accent: #f43f5e">
+            <div class="subject-icon"><i data-lucide="palette"></i></div>
+            <span class="subject-name">Arte</span>
+            <span class="subject-count">5 temas</span>
+          </a>
+          <a href="educacion-fisica/index.html" class="subject-card" style="--accent: #14b8a6">
+            <div class="subject-icon"><i data-lucide="activity"></i></div>
+            <span class="subject-name">Ed. Fisica</span>
+            <span class="subject-count">5 temas</span>
+          </a>
+        </div>
+        <a href="simulacro-minedu/index.html" class="simulacro-banner">
+          <div class="simulacro-left">
+            <div class="simulacro-icon"><i data-lucide="award"></i></div>
+            <div>
+              <h3>Simulacro MINEDU</h3>
+              <p>Examen oficial - 100 preguntas de todas las materias</p>
+            </div>
+          </div>
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
     <!-- 1RO SECUNDARIA -->
-    <section class="grade-block coming-soon-grade">
-      <div class="grade-header">
-        <div class="grade-num">1ro</div>
-        <div class="grade-meta">
-          <h2>Secundaria</h2>
-          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+    <div class="accordion">
+      <button class="accordion-btn coming" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num">1ro</div>
+          <div class="acc-info">
+            <h2>Secundaria</h2>
+            <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+          </div>
         </div>
-        <div class="grade-status status-soon">
-          <i data-lucide="clock"></i> Proximamente
+        <div class="acc-right">
+          <span class="acc-status status-soon"><i data-lucide="clock"></i> Proximamente</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="coming-msg">
+          <i data-lucide="construction"></i>
+          <span>Este grado esta en construccion. Vuelve pronto!</span>
         </div>
       </div>
-      <div class="coming-overlay">
-        <i data-lucide="construction"></i>
-        <span>En construccion</span>
-      </div>
-    </section>
+    </div>
 
     <!-- 2DO SECUNDARIA -->
-    <section class="grade-block coming-soon-grade">
-      <div class="grade-header">
-        <div class="grade-num">2do</div>
-        <div class="grade-meta">
-          <h2>Secundaria</h2>
-          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+    <div class="accordion">
+      <button class="accordion-btn coming" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num">2do</div>
+          <div class="acc-info">
+            <h2>Secundaria</h2>
+            <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+          </div>
         </div>
-        <div class="grade-status status-soon">
-          <i data-lucide="clock"></i> Proximamente
+        <div class="acc-right">
+          <span class="acc-status status-soon"><i data-lucide="clock"></i> Proximamente</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="coming-msg">
+          <i data-lucide="construction"></i>
+          <span>Este grado esta en construccion. Vuelve pronto!</span>
         </div>
       </div>
-      <div class="coming-overlay">
-        <i data-lucide="construction"></i>
-        <span>En construccion</span>
-      </div>
-    </section>
+    </div>
 
     <!-- 3RO SECUNDARIA -->
-    <section class="grade-block coming-soon-grade">
-      <div class="grade-header">
-        <div class="grade-num">3ro</div>
-        <div class="grade-meta">
-          <h2>Secundaria</h2>
-          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+    <div class="accordion">
+      <button class="accordion-btn coming" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num">3ro</div>
+          <div class="acc-info">
+            <h2>Secundaria</h2>
+            <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+          </div>
         </div>
-        <div class="grade-status status-soon">
-          <i data-lucide="clock"></i> Proximamente
+        <div class="acc-right">
+          <span class="acc-status status-soon"><i data-lucide="clock"></i> Proximamente</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="coming-msg">
+          <i data-lucide="construction"></i>
+          <span>Este grado esta en construccion. Vuelve pronto!</span>
         </div>
       </div>
-      <div class="coming-overlay">
-        <i data-lucide="construction"></i>
-        <span>En construccion</span>
-      </div>
-    </section>
+    </div>
 
     <!-- 4TO SECUNDARIA -->
-    <section class="grade-block coming-soon-grade">
-      <div class="grade-header">
-        <div class="grade-num">4to</div>
-        <div class="grade-meta">
-          <h2>Secundaria</h2>
-          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+    <div class="accordion">
+      <button class="accordion-btn coming" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num">4to</div>
+          <div class="acc-info">
+            <h2>Secundaria</h2>
+            <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+          </div>
         </div>
-        <div class="grade-status status-soon">
-          <i data-lucide="clock"></i> Proximamente
+        <div class="acc-right">
+          <span class="acc-status status-soon"><i data-lucide="clock"></i> Proximamente</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="coming-msg">
+          <i data-lucide="construction"></i>
+          <span>Este grado esta en construccion. Vuelve pronto!</span>
         </div>
       </div>
-      <div class="coming-overlay">
-        <i data-lucide="construction"></i>
-        <span>En construccion</span>
-      </div>
-    </section>
+    </div>
 
     <!-- 5TO SECUNDARIA -->
-    <section class="grade-block coming-soon-grade">
-      <div class="grade-header">
-        <div class="grade-num">5to</div>
-        <div class="grade-meta">
-          <h2>Secundaria</h2>
-          <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+    <div class="accordion">
+      <button class="accordion-btn coming" onclick="toggleAccordion(this)">
+        <div class="acc-left">
+          <div class="acc-num">5to</div>
+          <div class="acc-info">
+            <h2>Secundaria</h2>
+            <p>Matematica, Comunicacion, Ciencia, Historia y mas</p>
+          </div>
         </div>
-        <div class="grade-status status-soon">
-          <i data-lucide="clock"></i> Proximamente
+        <div class="acc-right">
+          <span class="acc-status status-soon"><i data-lucide="clock"></i> Proximamente</span>
+          <i data-lucide="chevron-down" class="acc-arrow"></i>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="coming-msg">
+          <i data-lucide="construction"></i>
+          <span>Este grado esta en construccion. Vuelve pronto!</span>
         </div>
       </div>
-      <div class="coming-overlay">
-        <i data-lucide="construction"></i>
-        <span>En construccion</span>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+
+      // Cerrar todos
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+      document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
+
+      // Abrir el clickeado si estaba cerrado
+      if (!isOpen) {
+        content.classList.add('open');
+        btn.classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>

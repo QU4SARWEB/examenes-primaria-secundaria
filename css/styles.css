@@ -95,74 +95,119 @@ header {
   margin: 0 auto;
 }
 
-/* GRADE BLOCKS */
-.grade-block {
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  margin-bottom: 20px;
+/* ACCORDION */
+.accordion {
+  margin-bottom: 12px;
+  border-radius: var(--radius);
   overflow: hidden;
-  transition: all .3s;
+  border: 1px solid var(--card-border);
+  background: var(--card);
 }
 
-.grade-header {
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--card);
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+  text-align: left;
+  transition: all .2s;
+}
+.accordion-btn:hover {
+  background: rgba(129, 140, 248, 0.05);
+}
+.accordion-btn.active {
+  background: rgba(129, 140, 248, 0.08);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.acc-left {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px 28px;
 }
 
-.grade-num {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+.acc-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
-  color: white;
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.05);
   flex-shrink: 0;
+  transition: all .3s;
 }
-
-.active-grade .grade-num {
+.acc-num.active-num {
   background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: white;
   box-shadow: 0 4px 20px var(--primary-glow);
 }
 
-.grade-meta { flex: 1; }
-.grade-meta h2 { 
-  font-size: 20px; 
+.acc-info h2 { 
+  font-size: 18px; 
   font-weight: 800; 
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
-.grade-meta p { 
+.acc-info p { 
   font-size: 13px; 
   color: var(--text-secondary); 
 }
 
-.grade-status {
+.acc-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.acc-status {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
 }
-.grade-status i { width: 14px; height: 14px; }
+.acc-status i { width: 13px; height: 13px; }
 
 .status-active {
   background: rgba(34, 197, 94, 0.15);
   color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .status-soon {
   background: rgba(251, 191, 36, 0.1);
   color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.acc-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  transition: transform .3s;
+}
+.accordion-btn.active .acc-arrow {
+  transform: rotate(180deg);
+}
+
+/* ACCORDION CONTENT */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.accordion-content.open {
+  max-height: 800px;
 }
 
 /* SUBJECTS GRID */
@@ -170,7 +215,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  padding: 0 24px 24px;
+  padding: 24px;
 }
 
 .subject-card {
@@ -287,53 +332,57 @@ header {
   color: var(--text-secondary);
 }
 
-/* COMING SOON GRADES */
-.coming-soon-grade {
-  opacity: 0.6;
-  position: relative;
-}
-
-.coming-soon-grade .grade-num {
-  background: linear-gradient(135deg, #374151, #4b5563);
-}
-
-.coming-overlay {
+/* COMING MSG */
+.coming-msg {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px;
-  background: rgba(0,0,0,0.2);
-  border-top: 1px solid var(--card-border);
+  gap: 10px;
+  padding: 32px 24px;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
+  background: rgba(0,0,0,0.15);
 }
-.coming-overlay i { width: 16px; height: 16px; }
+.coming-msg i { width: 20px; height: 20px; color: #fbbf24; }
+
+/* COMING BTN */
+.accordion-btn.coming {
+  cursor: default;
+  opacity: 0.6;
+}
+.accordion-btn.coming:hover {
+  background: var(--card);
+}
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .wrap { padding: 24px 16px 40px; }
   .hero h1 { font-size: 28px; }
   
-  .grade-header { padding: 20px; }
-  .grade-num { width: 52px; height: 52px; font-size: 18px; }
-  .grade-meta h2 { font-size: 17px; }
-  .grade-status { padding: 6px 10px; font-size: 11px; }
+  .accordion-btn { padding: 16px 18px; }
+  .acc-num { width: 48px; height: 48px; font-size: 16px; }
+  .acc-info h2 { font-size: 16px; }
+  .acc-status { padding: 5px 8px; font-size: 10px; }
   
   .subjects-grid { 
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
-    padding: 0 16px 20px;
+    padding: 16px;
   }
-  .subject-card { padding: 16px 8px; }
+  .subject-card { padding: 14px 8px; }
   .subject-icon { width: 40px; height: 40px; }
   .subject-icon i { width: 20px; height: 20px; }
   .subject-name { font-size: 11px; }
   
-  .simulacro-banner { margin: 0 16px 20px; padding: 16px; }
+  .simulacro-banner { margin: 0 16px 16px; padding: 14px 16px; }
+  .simulacro-left { gap: 12px; }
+  .simulacro-icon { width: 40px; height: 40px; }
+  .simulacro-icon i { width: 20px; height: 20px; }
+  .simulacro-banner h3 { font-size: 14px; }
 }
 
 @media (max-width: 400px) {
   .subjects-grid { grid-template-columns: repeat(2, 1fr); }
+  .acc-right { flex-direction: column; align-items: flex-end; gap: 6px; }
 }
