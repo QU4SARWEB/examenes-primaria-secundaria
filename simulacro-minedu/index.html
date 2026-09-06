@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacro MINEDU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <style>
+    .simulacro-hero { background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(248,113,113,0.05)); border: 1px solid #ef4444; border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 24px; }
+    .simulacro-badge { display: inline-block; background: #ef4444; color: white; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .simulacro-hero h1 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+    .simulacro-hero p { color: var(--text-secondary); font-size: 14px; }
+    .simulacro-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+    .stat-box { background: var(--bg); border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-num { font-size: 24px; font-weight: 900; color: var(--primary); }
+    .stat-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+    .courses-preview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0; }
+    .course-pill { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--bg); border-radius: 8px; font-size: 12px; font-weight: 600; }
+    .course-dot { width: 8px; height: 8px; border-radius: 50%; }
+  </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="brand-area">
+        <a href="../index.html" class="back-btn"><i data-lucide="arrow-left"></i></a>
+        <div class="brand-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+          <i data-lucide="award"></i>
+        </div>
+        <div><div class="brand">Simulacro MINEDU</div><div class="sub">Examen Oficial</div></div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="setup" class="setup">
+      <div class="simulacro-hero">
+        <span class="simulacro-badge">Examen Oficial</span>
+        <h1>Simulacro MINEDU</h1>
+        <p>100 preguntas de todos los cursos de 6to grado</p>
+        <div class="simulacro-stats">
+          <div class="stat-box"><div class="stat-num">100</div><div class="stat-label">Preguntas</div></div>
+          <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Cursos</div></div>
+          <div class="stat-box"><div class="stat-num">60</div><div class="stat-label">Minutos</div></div>
+        </div>
+        <div class="courses-preview">
+          <div class="course-pill"><span class="course-dot" style="background:#6366f1;"></span> Matematica</div>
+          <div class="course-pill"><span class="course-dot" style="background:#f59e0b;"></span> Comunicacion</div>
+          <div class="course-pill"><span class="course-dot" style="background:#10b981;"></span> Personal Social</div>
+          <div class="course-pill"><span class="course-dot" style="background:#8b5cf6;"></span> Ciencia y Tecnologia</div>
+          <div class="course-pill"><span class="course-dot" style="background:#ec4899;"></span> Ingles</div>
+        </div>
+      </div>
+      <button class="primary btn-start" onclick="startExam()" style="background:#ef4444;">
+        <i data-lucide="play-circle"></i> Iniciar Simulacro
+      </button>
+    </section>
+    <section id="exam" class="exam"><div class="exam-card">
+      <div class="exam-top"><div class="q-counter" id="counter"><span class="q-num">1</span><span class="q-total">/ 100</span></div><div class="timer-badge" id="timer"><i data-lucide="clock"></i> <span>60:00</span></div></div>
+      <div class="progress-wrap"><div class="progress"><div class="bar" id="bar"></div></div><span class="progress-pct" id="progressPct">0%</span></div>
+      <div class="question-area"><p class="question" id="question"></p></div>
+      <div class="options" id="options"></div>
+      <div class="exam-bottom"><span class="answered" id="answeredText">0 de 100 respondidas</span><div style="display:flex;gap:8px"><button class="btn-pdf" onclick="exportPDF()" title="Descargar PDF para imprimir"><i data-lucide="download"></i> PDF</button><button class="primary btn-finish" id="finishBtn" onclick="finish()" style="display:none"><i data-lucide="check-circle"></i> Finalizar</button></div></div>
+    </div></section>
+    <section id="result" class="result"><div class="result-card">
+      <div class="result-hero"><i data-lucide="trophy" class="trophy"></i><h1>Simulacro Completado</h1></div>
+      <div class="score-circle"><span class="score-big" id="score">0/100</span><span class="score-pct" id="scorePct">0%</span></div>
+      <p class="result-msg" id="resultText"></p>
+      <div class="review" id="review"></div>
+      <button class="primary btn-large" onclick="showSetup()"><i data-lucide="rotate-ccw"></i> Volver</button>
+    </div></section>
+  </main>
+  <script src="../js/shared.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
